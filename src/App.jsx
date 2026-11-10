@@ -46,7 +46,7 @@ function App() {
           </ul>
 
           {visibleProjects.length === 0 && (
-            <p className="text-muted p-3 m-0">No projects found.</p>
+            <p className="text-muted p-3 m-0">No projects match your search. Try another word.</p>
           )}
         </section>
       </main>
