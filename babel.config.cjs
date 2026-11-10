@@ -1,4 +1,4 @@
-// Tells Jest how to translate modern JavaScript and JSX.
+
 module.exports = {
   presets: [
     ['@babel/preset-env', { targets: { node: 'current' } }],
