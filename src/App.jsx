@@ -24,7 +24,7 @@ function App() {
     setProjects([newProject, ...projects]);
   };
 
-  // Search only looks at the title and description now.
+  
   const visibleProjects = projects.filter((project) =>
     `${project.title} ${project.description}`
       .toLowerCase()
@@ -42,7 +42,7 @@ function App() {
       <main className="container py-4" style={{ maxWidth: '40rem' }}>
         <ProjectForm onAdd={addProject} />
 
-        {/* One card holds the search box and the list, like the mock-up */}
+        
         <section className="card" aria-label="Projects">
           <div className="card-header bg-white">
             <SearchBar value={query} onChange={setQuery} />
