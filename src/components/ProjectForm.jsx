@@ -1,31 +1,30 @@
 import { useState } from 'react';
 
 function ProjectForm({ onAdd }) {
-  // One piece of state per input box.
+
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Branding');
   const [description, setDescription] = useState('');
   const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
-    // Stop the browser from reloading the page, which is what forms do by default.
+   
     e.preventDefault();
 
-    // Simple validation: .trim() removes spaces from both ends.
-    if (title.trim() === '' || description.trim() === '') {
-      setError('Enter a title and a description.');
+   
+    if (description.trim().length<20){
+      setError('Describe the project in at least 20 characters');
       return;
     }
-
-    // Hand the new project up to App.
+ 
     onAdd({
-      id: Date.now(), // the current time in milliseconds works as a unique id for now
+      id: Date.now(),
       title: title.trim(),
       category: category,
       description: description.trim(),
     });
 
-    // Clear the form for the next entry.
+    
     setTitle('');
     setDescription('');
     setError('');
@@ -71,7 +70,7 @@ function ProjectForm({ onAdd }) {
         />
       </div>
 
-      {/* Show the error only when there is one. */}
+    
       {error && <p className="text-danger">{error}</p>}
 
       <button type="submit" className="btn btn-primary">Add project</button>
