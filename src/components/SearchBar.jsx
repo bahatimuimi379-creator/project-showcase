@@ -2,7 +2,7 @@
 function SearchBar({ value, onChange }) {
   return (
     <div>
-      {/* Hidden visually, but still read by screen readers */}
+      
       <label htmlFor="search" className="visually-hidden">Search projects</label>
       <input
         id="search"
